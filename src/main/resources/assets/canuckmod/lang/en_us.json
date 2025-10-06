@@ -1,0 +1,18 @@
+{
+  "itemGroup.examplemod": "Example Mod Tab",
+  "block.examplemod.example_block": "Example Block",
+  "item.examplemod.example_item": "Example Item",
+
+  "block.canuckmod.sap_tap": "Sap Tap",
+  "block.canuckmod.maple_log": "Maple Log",
+  "block.canuckmod.maple_wood": "Maple Wood",
+  "block.canuckmod.stripped_maple_log": "Stripped Maple Log",
+  "block.canuckmod.stripped_maple_wood": "Stripped Maple Wood",
+  "block.canuckmod.maple_planks": "Maple Planks",
+  "block.canuckmod.maple_leaves": "Maple Leaves",
+  "block.canuckmod.maple_sapling": "Maple Sapling",
+
+
+  "item.canuckmod.sap_bucket": "Bucket of Sap"
+
+}

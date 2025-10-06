@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "canuckmod:block/maple_log",
+    "side": "canuckmod:block/maple_log"
+  }
+}

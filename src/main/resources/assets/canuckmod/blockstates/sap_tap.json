@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north,has_bucket=false": { "model": "canuckmod:block/sap_tap" },
+    "facing=north,has_bucket=true,full_bucket=false": { "model": "canuckmod:block/sap_tap_bucket" },
+    "facing=north,has_bucket=true,full_bucket=true": { "model": "canuckmod:block/sap_tap_bucket_full" },
+
+    "facing=south,has_bucket=false": { "model": "canuckmod:block/sap_tap", "y": 180 },
+    "facing=south,has_bucket=true,full_bucket=false": { "model": "canuckmod:block/sap_tap_bucket", "y": 180 },
+    "facing=south,has_bucket=true,full_bucket=true": { "model": "canuckmod:block/sap_tap_bucket_full", "y": 180 },
+
+    "facing=west,has_bucket=false": { "model": "canuckmod:block/sap_tap", "y": 270 },
+    "facing=west,has_bucket=true,full_bucket=false": { "model": "canuckmod:block/sap_tap_bucket", "y": 270 },
+    "facing=west,has_bucket=true,full_bucket=true": { "model": "canuckmod:block/sap_tap_bucket_full", "y": 270 },
+
+    "facing=east,has_bucket=false": { "model": "canuckmod:block/sap_tap", "y": 90 },
+    "facing=east,has_bucket=true,full_bucket=false": { "model": "canuckmod:block/sap_tap_bucket", "y": 90 },
+    "facing=east,has_bucket=true,full_bucket=true": { "model": "canuckmod:block/sap_tap_bucket_full", "y": 90 }
+  }
+}
+
