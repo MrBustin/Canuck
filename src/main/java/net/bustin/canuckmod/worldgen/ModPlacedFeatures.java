@@ -1,9 +1,12 @@
 package net.bustin.canuckmod.worldgen;
 
 import net.bustin.canuckmod.CanuckMod;
+import net.bustin.canuckmod.block.ModBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -14,11 +17,23 @@ import java.util.List;
 
 public class ModPlacedFeatures {
 
+    public static final ResourceKey<PlacedFeature> MAPLE_PLACED_KEY = registerKey("maple_placed");
+
+
+
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(context,MAPLE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MAPLE_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3,0.1f,2),
+                        ModBlocks.MAPLE_SAPLING.get()));
+
 
     }
+
+
+
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(CanuckMod.MOD_ID, name));

@@ -9,6 +9,8 @@ import net.bustin.canuckmod.item.ModCreativeModeTabs;
 import net.bustin.canuckmod.item.ModItems;
 import net.bustin.canuckmod.particle.MapleLeavesParticle;
 import net.bustin.canuckmod.particle.ModParticles;
+import net.bustin.canuckmod.worldgen.biome.ModTerrablender;
+import net.bustin.canuckmod.worldgen.biome.surface.ModSurfaceRules;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
@@ -28,6 +30,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(CanuckMod.MOD_ID)
@@ -54,6 +57,8 @@ public class CanuckMod {
         ModBlockEntities.register(modEventBus);
         ModParticles.register(modEventBus);
 
+        ModTerrablender.registerBiomes();
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -62,6 +67,7 @@ public class CanuckMod {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
     }
 
     // Add the example block item to the building blocks tab
