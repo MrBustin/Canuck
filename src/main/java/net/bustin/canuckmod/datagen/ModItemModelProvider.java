@@ -20,6 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
 
         saplingItem(ModBlocks.MAPLE_SAPLING);
+        saplingItem(ModBlocks.YELLOW_BIRCH_SAPLING);
         basicItem(ModItems.SAP_BUCKET.get());
 
 

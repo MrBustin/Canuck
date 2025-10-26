@@ -8,18 +8,24 @@
   },
   "downfall": 0.8,
   "effects": {
-    "fog_color": 2269670,
-    "foliage_color": 13763580,
-    "grass_color": 8324092,
+    "fog_color": 12638463,
+    "foliage_color": 3968533,
+    "grass_color": 16076597,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "sky_color": 3197208,
-    "water_color": 15216187,
-    "water_fog_color": 12524326
+    "particle": {
+      "options": {
+        "type": "canuckmod:maple_particle"
+      },
+      "probability": 0.005
+    },
+    "sky_color": 7907327,
+    "water_color": 4159204,
+    "water_fog_color": 329011
   },
   "features": [
     [],
@@ -28,8 +34,7 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "minecraft:forest_rock"
+      "minecraft:amethyst_geode"
     ],
     [
       "minecraft:monster_room",
@@ -63,8 +68,7 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:ore_gold_extra"
+      "minecraft:underwater_magma"
     ],
     [],
     [
@@ -73,14 +77,14 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "minecraft:patch_large_fern",
-      "minecraft:trees_plains",
+      "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "canuckmod:maple_placed"
+      "canuckmod:maple_placed",
+      "canuckmod:yellow_birch_placed",
+      "canuckmod:oak_placed"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -103,13 +107,13 @@
         "type": "canuckmod:moose",
         "maxCount": 5,
         "minCount": 3,
-        "weight": 2
+        "weight": 200
       },
       {
         "type": "minecraft:wolf",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 5
+        "weight": 100
       },
       {
         "type": "minecraft:sheep",

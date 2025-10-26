@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -33,10 +34,14 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STRIPPED_MAPLE_WOOD.get());
         this.dropSelf(ModBlocks.MAPLE_PLANKS.get());
         this.dropSelf(ModBlocks.MAPLE_SAPLING.get());
+        this.dropSelf(ModBlocks.YELLOW_BIRCH_SAPLING.get());
         this.dropSelf(ModBlocks.SAP_TAP.get());
 
         this.add(ModBlocks.MAPLE_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.add(ModBlocks.YELLOW_BIRCH_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.YELLOW_BIRCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
 
 

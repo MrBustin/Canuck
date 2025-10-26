@@ -21,17 +21,20 @@ public class ModOverworldRegion extends Region {
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
-        // The parameters for this biome are chosen arbitrarily.
-        new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.NEUTRAL))
+
+        // Vanilla Forest biome parameter points
+        var points = new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.NEUTRAL))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.ARID, ParameterUtils.Humidity.DRY))
                 .continentalness(ParameterUtils.Continentalness.INLAND)
                 .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.MAPLE_HEIGHTS));
+                .build();
 
-        // Add our points to the mapper
-        builder.build().forEach(mapper);
+
+        // Apply all points to the mapper
+        points.forEach(point -> mapper.accept(Pair.of(point, ModBiomes.MAPLE_HEIGHTS)));
     }
 }
+

@@ -65,6 +65,16 @@ public class ModBlocks {
     public static final DeferredBlock<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
             () -> new SaplingBlock(ModTreeGrowers.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
+    public static final DeferredBlock<Block> YELLOW_BIRCH_LEAVES = registerBlock("yellow_birch_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)));
+
+    public static final DeferredBlock<Block> YELLOW_BIRCH_SAPLING = registerBlock("yellow_birch_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.YELLOW_BIRCH, BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_SAPLING)));
+
+
+
+
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

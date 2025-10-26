@@ -1,6 +1,7 @@
 package net.bustin.canuckmod.entity.custom;
 
 import net.bustin.canuckmod.entity.ModEntities;
+import net.bustin.canuckmod.util.ChopTreeGoal;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -62,28 +63,30 @@ public class BeaverEntity extends Animal {
             }
         });
 
-        this.goalSelector.addGoal(1, new PanicGoal(this, 2.0));
-        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.25, stack -> stack.is(Items.STICK), false));
+        this.goalSelector.addGoal(1, new ChopTreeGoal(this));
 
-        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25));
+        this.goalSelector.addGoal(2, new PanicGoal(this, 2.0));
+        this.goalSelector.addGoal(3, new BreedGoal(this, 1.0));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, stack -> stack.is(Items.STICK), false));
 
-        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0) {
+        this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.25));
+
+        this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1.0) {
             @Override
             public boolean canUse() {
                 return !BeaverEntity.this.isInWater() && super.canUse();
             }
         });
 
-        this.goalSelector.addGoal(6, new RandomSwimmingGoal(this, 1.0, 40) {
+        this.goalSelector.addGoal(7, new RandomSwimmingGoal(this, 1.0, 40) {
             @Override
             public boolean canUse() {
                 return BeaverEntity.this.isInWater() && super.canUse();
             }
         });
 
-        this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
     }
 
     public static AttributeSupplier.Builder createAttributes() {

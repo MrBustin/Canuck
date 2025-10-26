@@ -2,6 +2,7 @@ package net.bustin.canuckmod.worldgen.biome;
 
 import net.bustin.canuckmod.CanuckMod;
 import net.bustin.canuckmod.entity.ModEntities;
+import net.bustin.canuckmod.particle.ModParticles;
 import net.bustin.canuckmod.worldgen.ModPlacedFeatures;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -14,7 +15,10 @@ import net.minecraft.sounds.Musics;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> MAPLE_HEIGHTS = ResourceKey.create(Registries.BIOME,
@@ -36,28 +40,28 @@ public class ModBiomes {
 
     private static Biome mapleHeights(BootstrapContext<Biome> context){
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOOSE.get(), 2, 3, 5));
 
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOOSE.get(), 200, 3, 5));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 100, 4, 4));
 
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
-        //we need to follow the same order as vanilla biomes for the BiomeDefaultFeatures
+        // Add default overworld stuff
         globalOverworldGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addMossyStoneBlock(biomeBuilder);
-        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addFerns(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-        BiomeDefaultFeatures.addExtraGold(biomeBuilder);
-
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
-
+        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+        // Your custom trees/vegetation
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.MAPLE_PLACED_KEY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.YELLOW_BIRCH_PLACED_KEY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.OAK_PLACED_KEY);
+
+
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -66,14 +70,17 @@ public class ModBiomes {
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
-                        .waterColor(0xe82e3b)
-                        .waterFogColor(0xbf1b26)
-                        .skyColor(0x30c918)
-                        .grassColorOverride(0x7f03fc)
-                        .foliageColorOverride(0xd203fc)
-                        .fogColor(0x22a1e6)
+                        .waterColor(0x3F76E4)
+                        .waterFogColor(0x050533)
+                        .skyColor(0x78A7FF)
+                        .grassColorOverride(0xf54f35)
+                        .foliageColorOverride(0x3C8E15)
+                        .fogColor(0xC0D8FF)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                        //.backgroundMusic(Musics.createGameMusic(Sounds.BAR_BRAWL.getHolder().get()))
+                                .ambientParticle(new AmbientParticleSettings(
+                                        ModParticles.MAPLE_PARTICLE.get(), 0.005f
+                                ))
+                        //.backgroundMusic(Musics.createGameMusic(.getHolder().get()))
                         .build())
                 .build();
     }

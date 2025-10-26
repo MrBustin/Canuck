@@ -1,4 +1,4 @@
-// 1.21	2025-09-27T01:19:46.342625	Loot Tables
+// 1.21	2025-10-06T10:35:27.0150101	Loot Tables
 4ce6e437afcc2a50a272e358367eb2dfb6a6bfd6 data/canuckmod/loot_table/blocks/maple_leaves.json
 bd4ae94ef947da93889fb4c6c5ff028c6f7ff759 data/canuckmod/loot_table/blocks/maple_log.json
 a48aa9c8c8667de9e1fb8a821d1f5689425852c2 data/canuckmod/loot_table/blocks/maple_planks.json
@@ -7,3 +7,5 @@ a48aa9c8c8667de9e1fb8a821d1f5689425852c2 data/canuckmod/loot_table/blocks/maple_
 7bea4aa0ee22369bc8bf47fd368190748f8f28bf data/canuckmod/loot_table/blocks/sap_tap.json
 538b45cc2e0d704fe60d2cd733fff3b063e3d72f data/canuckmod/loot_table/blocks/stripped_maple_log.json
 54cbd8127e74bc7c7fe740b618017779c77f85d3 data/canuckmod/loot_table/blocks/stripped_maple_wood.json
+44d54528c7cb23ed3a6d7c92f2bdd1e2df3f1f4d data/canuckmod/loot_table/blocks/yellow_birch_leaves.json
+424ff75df0e3716f6a9880764c36a7184af668a3 data/canuckmod/loot_table/blocks/yellow_birch_sapling.json

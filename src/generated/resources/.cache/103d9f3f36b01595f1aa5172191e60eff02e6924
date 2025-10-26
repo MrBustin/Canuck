@@ -1,5 +1,9 @@
-// 1.21	2025-10-06T00:18:42.1429451	Registries
-970173815716f66203e3c4db197ad4ec27097e7b data/canuckmod/neoforge/biome_modifier/add_tree_maple.json
-84fda72d75111a85f9e1ec97da53bec6217d966f data/canuckmod/worldgen/biome/maple_heights.json
+// 1.21	2025-10-06T23:53:58.4703329	Registries
+84909c1c449d3b491b874290a953948193857b03 data/canuckmod/neoforge/biome_modifier/spawn_moose.json
+c806454365518c5b4594e118850ae58c1acaecf7 data/canuckmod/worldgen/biome/maple_heights.json
 8602ff88b10264664d045d0bf37bb7ce9cc1193a data/canuckmod/worldgen/configured_feature/maple.json
-7e82d55018d757606fb57fdfe9a25ecc349ec27b data/canuckmod/worldgen/placed_feature/maple_placed.json
+77d3a36acbed5d67055d5fdf2c6b3e86106be949 data/canuckmod/worldgen/configured_feature/oak.json
+7179a6dc68907ad2d96560cd9bbaca6c43a29df7 data/canuckmod/worldgen/configured_feature/yellow_birch.json
+0730631463839963d4cd946c974c78a499152a50 data/canuckmod/worldgen/placed_feature/maple_placed.json
+de9322c1f2ccaaa1f73770818193cb7fe739fb71 data/canuckmod/worldgen/placed_feature/oak_placed.json
+d8cf56be2e6410aaa98a569846c260d8b3d59263 data/canuckmod/worldgen/placed_feature/yellow_birch_placed.json

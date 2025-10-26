@@ -9,6 +9,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
@@ -18,6 +19,8 @@ import java.util.List;
 public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> MAPLE_PLACED_KEY = registerKey("maple_placed");
+    public static final ResourceKey<PlacedFeature> YELLOW_BIRCH_PLACED_KEY = registerKey("yellow_birch_placed");
+    public static final ResourceKey<PlacedFeature> OAK_PLACED_KEY = registerKey("oak_placed");
 
 
 
@@ -26,10 +29,16 @@ public class ModPlacedFeatures {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context,MAPLE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MAPLE_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3,0.1f,2),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(5,0.1f,2),
                         ModBlocks.MAPLE_SAPLING.get()));
 
+        register(context,YELLOW_BIRCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.YELLOW_BIRCH_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3,0.1f,2),
+                        ModBlocks.YELLOW_BIRCH_SAPLING.get()));
 
+        register(context,OAK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OAK_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3,0.1f,2),
+                        Blocks.OAK_SAPLING));
     }
 
 

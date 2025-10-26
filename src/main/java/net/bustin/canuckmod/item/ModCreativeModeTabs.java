@@ -23,12 +23,14 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ModBlocks.MAPLE_LEAVES);
+                        output.accept(ModBlocks.YELLOW_BIRCH_LEAVES);
                         output.accept(ModBlocks.MAPLE_LOG);
                         output.accept(ModBlocks.STRIPPED_MAPLE_LOG);
                         output.accept(ModBlocks.STRIPPED_MAPLE_WOOD);
                         output.accept(ModBlocks.MAPLE_WOOD);
                         output.accept(ModBlocks.MAPLE_PLANKS);
                         output.accept(ModBlocks.MAPLE_SAPLING);
+                        output.accept(ModBlocks.YELLOW_BIRCH_SAPLING);
 
                         output.accept(ModBlocks.SAP_TAP);
                         output.accept(ModItems.SAP_BUCKET);
